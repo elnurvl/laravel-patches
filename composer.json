@@ -1,17 +1,21 @@
 {
-    "name": "rappasoft/laravel-patches",
+    "name": "elnurvl/laravel-patches",
     "description": "Run patches migration style in your Laravel applications.",
     "keywords": [
         "rappasoft",
         "laravel-patches"
     ],
-    "homepage": "https://github.com/rappasoft/laravel-patches",
+    "homepage": "https://github.com/elnurvl/laravel-patches",
     "license": "MIT",
     "authors": [
         {
             "name": "Anthony Rappa",
             "email": "rappa819@gmail.com",
             "role": "Developer"
+        },
+        {
+            "name": "Elnur Hajiyev",
+            "role": "Contributor"
         }
     ],
     "require": {
