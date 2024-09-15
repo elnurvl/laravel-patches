@@ -6,7 +6,7 @@ return new class extends Patch {
     /**
      * List of environments the patch should run on
      *
-     * @var array $envs
+     * @var array
      */
     public array $envs = ['testing', 'other_environment'];
 
