@@ -8,21 +8,25 @@ return new class extends Patch {
      *
      * @var array $envs
      */
-    public array $envs = ['production'];
+    public array $envs = ['other-environment'];
 
     /**
      * Run the patch.
+     *
+     * @return void
      */
     public function up(): void
     {
-        //
+        $this->log('Hello Fourth!');
     }
 
     /**
      * Reverse the patch.
+     *
+     * @return void
      */
     public function down(): void
     {
-        //
+        \Log::info('Goodbye Fourth');
     }
 };

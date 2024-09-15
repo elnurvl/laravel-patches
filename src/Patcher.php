@@ -152,7 +152,11 @@ class Patcher
      */
     public function runPatch(object $patch, string $method): ?array
     {
-        if (method_exists($patch, $method)) {
+        $shouldRun = true;
+        if (isset($patch->envs)) {
+            $shouldRun = app()->environment($patch->envs);
+        }
+        if (method_exists($patch, $method) && $shouldRun) {
             $patch->{$method}();
 
             return $patch->log;

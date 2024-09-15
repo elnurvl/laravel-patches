@@ -54,6 +54,11 @@ class RollbackTest extends TestCase
             file_get_contents(__DIR__.'/patches/2021_01_02_000000_my_second_patch.php')
         );
 
+        file_put_contents(
+            database_path('patches/2021_01_04_000000_my_fourth_patch.php'),
+            file_get_contents(__DIR__.'/patches/2021_01_04_000000_my_fourth_patch.php')
+        );
+
         $this->artisan('patch')->run();
 
         $this->assertDatabaseCount(config('laravel-patches.table_name'), 2);

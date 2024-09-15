@@ -122,6 +122,10 @@ class PatchCommand extends Command
 
         $log = $this->patcher->runPatch($patch, 'up');
 
+        if ($log === null) {
+            return;
+        }
+
         $runTime = number_format((microtime(true) - $startTime) * 1000, 2);
 
         $this->repository->log($name, $batch, $log);

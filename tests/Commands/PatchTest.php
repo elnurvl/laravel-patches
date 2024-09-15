@@ -17,6 +17,10 @@ class PatchTest extends TestCase
             database_path('patches/2021_01_03_000000_my_third_patch.php'),
             file_get_contents(__DIR__.'/patches/2021_01_03_000000_my_third_patch.php')
         );
+        file_put_contents(
+            database_path('patches/2021_01_04_000000_my_fourth_patch.php'),
+            file_get_contents(__DIR__ . '/patches/2021_01_04_000000_my_fourth_patch.php')
+        );
 
         $this->assertDatabaseCount(config('laravel-patches.table_name'), 0);
 
@@ -28,6 +32,9 @@ class PatchTest extends TestCase
             'patch' => '2021_01_01_000000_my_first_patch',
             'batch' => 1,
             'log' => json_encode(['Hello First!']),
+        ]);
+        $this->assertDatabaseMissing(config('laravel-patches.table_name'), [
+            'patch' => '2021_01_04_000000_my_fourth_patch',
         ]);
     }
 
